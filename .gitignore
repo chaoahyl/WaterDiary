@@ -11,6 +11,7 @@ compile_commands.json
 
 # Generated editor configuration contains machine-specific absolute paths
 /buildServer.json
+/AGENTS.md
 .DS_Store
 Thumbs.db
 __pycache__/
