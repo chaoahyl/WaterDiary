@@ -1,0 +1,30 @@
+[
+  {
+    "op": "set",
+    "owner": "WaterDiary",
+    "config": "Debug",
+    "key": "PRODUCT_BUNDLE_IDENTIFIER",
+    "value": "com.example.waterdiary"
+  },
+  {
+    "op": "set",
+    "owner": "WaterDiary",
+    "config": "Release",
+    "key": "PRODUCT_BUNDLE_IDENTIFIER",
+    "value": "com.example.waterdiary"
+  },
+  {
+    "op": "set",
+    "owner": "WaterDiary",
+    "config": "Debug",
+    "key": "DEVELOPMENT_TEAM",
+    "value": "YOUR_TEAM_ID"
+  },
+  {
+    "op": "set",
+    "owner": "WaterDiary",
+    "config": "Release",
+    "key": "DEVELOPMENT_TEAM",
+    "value": "YOUR_TEAM_ID"
+  }
+]

@@ -1,0 +1,45 @@
+# Xcode
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+compile_commands.json
+*.ipa
+*.app/
+*.dSYM/
+*.xcarchive/
+
+# Generated editor configuration contains machine-specific absolute paths
+/buildServer.json
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+*.log
+
+# kxbuild signing material (keep certificates out of version control)
+keychain/
+*.p12
+*.pfx
+*.p8
+*.key
+*.pem
+*.cer
+*.der
+*.mobileprovision
+*.provisionprofile
+password.properties
+AuthKey_*.json
+AuthKey_*.p8
+
+# Local credentials and per-user settings; publish examples only
+.env
+.env.*
+!.env.example
+!.env.*.example
+credentials.json
+service-account*.json
+/Config/*.local.json
+
+# Tutorial articles and images (published on the blog, kept local)
+/Docs
