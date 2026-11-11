@@ -2,7 +2,7 @@
 
 原生 SwiftUI 饮水日记，最低支持 iOS 15。
 
-支持首页快捷记录、自定义水量、记录编辑与删除、每日目标、饮水历史、最近 7 天统计和跨天刷新。饮水数据保存在使用者设备的本地 `UserDefaults` 中。
+支持首页快捷记录、自定义水量、记录编辑与删除、每日目标、饮水历史、最近 7 天统计、跨天刷新和喝水提醒。饮水数据保存在使用者设备的本地 `UserDefaults` 中。
 
 ## 开发环境与个人配置
 
@@ -75,10 +75,11 @@ kxbuild run WaterDiary.xcodeproj --json
 | `WaterDiary/Views/History` | 历史列表与单日明细 |
 | `WaterDiary/Views/Editors` | 饮水记录和偏好编辑弹窗 |
 | `WaterDiary/Views/Components` | 进度卡、周统计图和记录行 |
+| `WaterDiary/Services` | 喝水提醒（本地通知） |
 
-`Models`、`Stores`、`Theme`、`Views` 通过 `kxbuild project add-folder` 注册为 WaterDiary target 的同步目录，新增 Swift 文件会自动纳入项目。测试代码留在 target 之外。
+`Models`、`Stores`、`Theme`、`Views`、`Services` 通过 `kxbuild project add-folder` 注册为 WaterDiary target 的同步目录，新增 Swift 文件会自动纳入项目。测试代码留在 target 之外。
 
-本地数据继续使用 `waterDiary.archive.v1`，文件拆分不改变数据格式或已有记录。数据模型与存储保持独立于页面，展示组件通过数据和操作回调接入首页。
+本地数据继续使用 `waterDiary.archive.v1`，文件拆分不改变数据格式或已有记录。喝水提醒的设置使用独立的键，不改变饮水归档的格式。数据模型与存储保持独立于页面，展示组件通过数据和操作回调接入首页。
 
 ## 验证
 

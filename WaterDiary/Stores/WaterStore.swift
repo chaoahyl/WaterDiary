@@ -11,7 +11,8 @@ final class WaterStore: ObservableObject {
     @Published var errorMessage: String?
 
     private let defaults: UserDefaults
-    private var canSave = true
+    /// False after the saved archive failed to load; the shown archive is then only a placeholder.
+    private(set) var canSave = true
     private var calendar: Calendar { .autoupdatingCurrent }
 
     init(defaults: UserDefaults = .standard, now: Date = Date()) {

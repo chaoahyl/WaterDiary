@@ -2,6 +2,7 @@ import SwiftUI
 
 struct WaterProfileView: View {
     @ObservedObject var store: WaterStore
+    @ObservedObject var reminders: WaterReminders
     @State private var setting: WaterSetting?
 
     var body: some View {
@@ -32,6 +33,19 @@ struct WaterProfileView: View {
                     Button { setting = .cup } label: {
                         settingsRow("常用杯量", icon: "mug", value: "\(store.archive.cupAmount) 毫升")
                     }
+                }
+                Section {
+                    NavigationLink {
+                        WaterReminderSettingsView(store: store, reminders: reminders)
+                    } label: {
+                        HStack {
+                            Label("喝水提醒", systemImage: "bell")
+                            Spacer()
+                            Text(reminders.settings.summary).foregroundStyle(.secondary)
+                        }
+                    }
+                } header: {
+                    Text("提醒")
                 }
                 Section("我的记录") {
                     NavigationLink {

@@ -40,6 +40,11 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		D29F752FBDDA8DD4818FA561 /* Services */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +76,7 @@
 				A146F904A172B27DD5CEE969 /* Stores */,
 				C9DC55481234B1508C128252 /* Theme */,
 				12EB5A07786E4ADF4652772E /* Views */,
+				D29F752FBDDA8DD4818FA561 /* Services */,
 			);
 			path = WaterDiary;
 			sourceTree = "<group>";
@@ -103,6 +109,7 @@
 				A146F904A172B27DD5CEE969 /* Stores */,
 				C9DC55481234B1508C128252 /* Theme */,
 				12EB5A07786E4ADF4652772E /* Views */,
+				D29F752FBDDA8DD4818FA561 /* Services */,
 			);
 			name = WaterDiary;
 			productName = WaterDiary;

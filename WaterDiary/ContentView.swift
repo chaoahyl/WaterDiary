@@ -4,6 +4,7 @@ import Combine
 
 struct ContentView: View {
     @StateObject private var store = WaterStore()
+    @StateObject private var services = WaterServices()
     @Environment(\.scenePhase) private var scenePhase
     private let clock = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
 
@@ -11,7 +12,7 @@ struct ContentView: View {
         TabView {
             WaterHomeView(store: store)
                 .tabItem { Label("首页", systemImage: "drop.fill") }
-            WaterProfileView(store: store)
+            WaterProfileView(store: store, reminders: services.reminders)
                 .tabItem { Label("我的", systemImage: "person.crop.circle") }
         }
         .tint(WaterStyle.blue)
@@ -20,8 +21,12 @@ struct ContentView: View {
             store.refreshDate()
         }
         .onChange(of: scenePhase) { phase in
-            if phase == .active { store.refreshDate() }
+            if phase == .active {
+                store.refreshDate()
+                services.appDidBecomeActive()
+            }
         }
+        .onAppear { services.attach(to: store) }
         .alert("记录提示", isPresented: Binding(
             get: { store.errorMessage != nil },
             set: { if !$0 { store.errorMessage = nil } }
